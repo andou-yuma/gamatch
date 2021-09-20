@@ -6,10 +6,52 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <!--jqueryの読み込み-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--レスポンシブ対応-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
   </head>
 
   <body>
+    <header>
+      <div class="container">
+
+        <h1 class="header-left">
+          <a href="/">GaMatch</a>
+        </h1>
+
+        <div class="menu">
+          <i class="fa fa-bars"></i>
+        </div>
+        <aside class="sidebar">
+          <div class="sidebar__inner">
+            <i class="fa fa-times-circle sidebar__icon"></i>
+          </div>
+          <% if user_signed_in? %>
+            <%= link_to "ユーザーを探す", users_path, class: "sidebar__txt" %>
+            <%= link_to "ログアウト", destroy_user_session_path, class: "sidebar__txt", method: :delete %>
+            <%= link_to current_user.name, user_path(current_user.id), class: "sidebar__txt" %>
+          <% else %>
+            <%= link_to "ユーザーを探す", users_path, class: "sidebar__txt" %></li>
+            <%= link_to "ログイン", new_user_session_path, class: 'post', class: "sidebar__txt" %>
+            <%= link_to "新規登録", new_user_registration_path, class: 'post', class: "sidebar__txt" %>
+          <% end %>
+        </aside>
+        <div class="sidebar-bg"></div>
+              
+
+        
+      </div>
+    </header>
+
     <%= yield %>
+    <footer>
+      <div class="container">
+        <p>Copyright 2021 GaMatch All Rights Reserved.</p>
+      </div>
+    </footer>
   </body>
 </html>

@@ -1,0 +1,31 @@
+<div class="contents_row">
+
+  <p class="mypage"><%= @name %>さんのマイページ</p>
+
+  <div class="my-info">
+
+    <div class="left-info">
+    <img src=<%= @user.image.url %> class = "icon_image">
+    </div>
+
+    <div class="right-info">
+      <% if @user.age.present? %>
+      <p><%= @user.age %>代
+      <% end %>
+      <% if @user.age.present? %>
+      <%= @user.sex %></p>
+      <% end %>
+
+      <div class="intro-box">
+        <div class="box-title">自己紹介</div>
+        <p><%= simple_format(@user.intro) %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="btn">
+    <%= link_to "編集する", edit_user_path(@user), class: "edit-btn" %>
+    <%= link_to "ゲーム登録", new_game_path %>
+  </div>
+
+</div>

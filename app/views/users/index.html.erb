@@ -1,0 +1,27 @@
+<div class="contents_row">
+  
+  <%= form_with(url: search_users_path, local: true, method: :get, class: "search-form") do |form| %>
+    <%= form.text_field :keyword, placeholder: "ユーザー検索：ゲーム名やハードを入力", class: "search-input" %>
+    <%= form.submit "検索", class: "search-btn" %>
+  <% end %>
+
+  <h2 class="all-users">ユーザー 一覧</h2>
+
+  <% @users.each do |user| %>
+    <div class="user-info">
+      <a href="/users/<%= user.id %>/about"><%= image_tag user.image.url, class: "icon_image" %></a>
+
+      <div class="right-info">
+        <%= link_to user.name, about_user_path(user) %>
+        <p class="voice">ボイスチャット: <%= user.voice %></p>
+        <% user.games.each do |game| %>
+          <div class="game-name">
+            <%= simple_format(game.platform) %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+    <%= paginate(@users) %>
+
+</div>

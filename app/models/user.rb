@@ -5,8 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          
   mount_uploader :image, ImageUploader
-  validates :nickname, presence: true
-  validates :intro, length: { maximum: 255 }
+  validates :name, presence: true
+  validates :introduction, length: { maximum: 255 }
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i },
                     uniqueness: { case_sensitive: false }
