@@ -72,3 +72,7 @@ gem 'haml-rails'
 gem 'ancestry'
 gem 'fog-aws'
 gem 'bootstrap', '~> 4.3.1'
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end

@@ -1,24 +1,32 @@
-# README
+# ゲームで繋がる輪『Gamatch』
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+　これは気軽にゲームを共にする友達を作ることができるマッチングサービスです。
+　昨今の情勢の影響でなかなか外出ができない現状で、お家でゲームを始める人が増えてきて、2021年現在で国内で約5,000万人以上のユーザーががいます。
+ 一緒にやりたいゲームをキーワードで検索してゲームをしている人を探します。 プロフィールを見て、この人とゲームをやってみたい！と思ったら、チャットでメッセージを送りゲームに誘うことができます。
+ 
+### サイトテーマ
+　遊びたい時に一緒にゲームができる
 
-Things you may want to cover:
+### テーマを選んだ理由
+もともとゲームをプレイする方だったが、１人でやる機会が多かった。最近ではオンラインで複数人で遊ぶゲームが増えてきて、1つのコミュニケーションの方法になっている。
+遊びはみんなでやるとさらに楽しいのは過去の実体験で分かっていたので、ゲームを利用した人と人とをつなげるツールを作りたかったから。
 
-* Ruby version
+### ターゲットユーザ
+学生〜社会人
 
-* System dependencies
+### 主な利用シーン
+<休日や各々時間が空いている時>
 
-* Configuration
+## 設計書
+<...>
 
-* Database creation
+## チャレンジ要素一覧
+https://docs.google.com/spreadsheets/d/1VNVIeamzAegiToCisyCklwEiG8Q6RnLAMNo2IySGnxQ/edit?usp=sharing
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
