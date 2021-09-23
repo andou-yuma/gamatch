@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_14_091806) do
+ActiveRecord::Schema.define(version: 2021_09_22_092432) do
 
   create_table "entries", force: :cascade do |t|
     t.integer "user_id"
     t.integer "room_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_entries_on_room_id"
+    t.index ["user_id"], name: "index_entries_on_user_id"
   end
 
   create_table "games", force: :cascade do |t|
@@ -35,10 +37,12 @@ ActiveRecord::Schema.define(version: 2021_09_14_091806) do
 
   create_table "messages", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "room_id"
-    t.string "content"
+    t.bigint "room_id"
+    t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_messages_on_room_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "plays", force: :cascade do |t|
@@ -46,6 +50,8 @@ ActiveRecord::Schema.define(version: 2021_09_14_091806) do
     t.integer "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_plays_on_game_id"
+    t.index ["user_id"], name: "index_plays_on_user_id"
   end
 
   create_table "rooms", force: :cascade do |t|

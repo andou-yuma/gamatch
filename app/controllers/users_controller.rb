@@ -40,18 +40,22 @@ class UsersController < ApplicationController
   def about
     @user = User.find(params[:id])
     @games = Game.all
+    # Entryモデルからログインユーザーのレコードを抽出
     @currentUserEntry=Entry.where(user_id: current_user.id)
+    # Entryモデルからメッセージ相手のレコードを抽出
     @userEntry=Entry.where(user_id: @user.id)
     if @user.id == current_user.id
     else
       @currentUserEntry.each do |cu|
         @userEntry.each do |u|
+          # ルームが存在する場合
           if cu.room_id == u.room_id then
             @isRoom = true
             @roomId = cu.room_id
           end
         end
       end
+      # ルームが存在しない場合は新規作成
       if @isRoom
       else
         @room = Room.new

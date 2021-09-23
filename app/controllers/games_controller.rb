@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+  
   def new
     @game = Game.new
     @game_parent_array = ["---"]
@@ -18,7 +19,7 @@ class GamesController < ApplicationController
     end
   end
   
-   private
+  private
   def game_params
     params.require(:game).permit(:platform)
   end

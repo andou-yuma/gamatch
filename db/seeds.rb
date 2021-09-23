@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create!(name: "hoge" ,email: "hoge@hoge.com", encrypted_password: "asasas" )
+
 
 ps4 = Game.create(:platform=>"PlayStation4")
 ps4_mhw = ps4.children.create(:platform=>"MONSTER HUNTER WORLD")

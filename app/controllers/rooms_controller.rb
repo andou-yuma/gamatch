@@ -6,7 +6,9 @@ class RoomsController < ApplicationController
   end
   def create
     @room = Room.create
+    # Entryモデルにログインユーザーのレコードを作成
     @entry1 = Entry.create(:room_id => @room.id, :user_id => current_user.id)
+    # Entryモデルにメッセージ相手のレコードを作成
     @entry2 = Entry.create(params.require(:entry).permit(:user_id, :room_id).merge(:room_id => @room.id))
     redirect_to "/rooms/#{@room.id}"
   end
