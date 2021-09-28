@@ -1,9 +1,6 @@
 class RoomsController < ApplicationController
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
   
-  def index
-    
-  end
   def create
     @room = Room.create
     # Entryモデルにログインユーザーのレコードを作成
