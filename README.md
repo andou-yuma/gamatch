@@ -19,7 +19,10 @@
 <休日や各々時間が空いている時>
 
 ## 設計書
-<...>
+https://app.diagrams.net/#G1xMR6TXcir-CtolPVejTzMiHH03h2MfB5
+
+## インフラ設計書
+https://docs.google.com/spreadsheets/d/1GXW6FeKa9IOYzra0cWsUwFVXoPjWNl1aD7lP8F7HrFU/edit?usp=sharing
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1VNVIeamzAegiToCisyCklwEiG8Q6RnLAMNo2IySGnxQ/edit?usp=sharing
